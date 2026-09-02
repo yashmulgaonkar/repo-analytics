@@ -1,0 +1,52 @@
+# Copyright (c) 2026 Yash Mulgaonkar <yashmulgaonkar@gmail.com>
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+name: Update analytics
+
+on:
+  schedule:
+    # Hourly, off the top of the hour to reduce Actions queue delay.
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect metrics
+        env:
+          TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: python3 scripts/collect.py
+
+      - name: Render SVGs
+        run: python3 scripts/render.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "Yash Mulgaonkar"
+          git config user.email "yashmulgaonkar@gmail.com"
+          git add data out
+          if git diff --staged --quiet; then
+            echo "No analytics changes"
+            exit 0
+          fi
+          git commit -m "$(cat <<'EOF'
+          chore: refresh repository analytics
+
+          EOF
+          )"
+          git push

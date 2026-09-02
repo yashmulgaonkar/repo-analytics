@@ -1,0 +1,6 @@
+# Repositories to collect all-time analytics for.
+# Traffic (clones/views) accumulates from first successful sync onward.
+repos:
+  - yashmulgaonkar/FlightScnr
+  - yashmulgaonkar/FlightScnr_Pi
+  - yashmulgaonkar/halo
