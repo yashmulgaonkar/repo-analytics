@@ -1,0 +1,123 @@
+{
+  "clones": {
+    "2026-08-19": {
+      "count": 3,
+      "uniques": 2
+    },
+    "2026-08-20": {
+      "count": 5,
+      "uniques": 2
+    },
+    "2026-08-21": {
+      "count": 13,
+      "uniques": 3
+    },
+    "2026-08-22": {
+      "count": 8,
+      "uniques": 5
+    },
+    "2026-08-23": {
+      "count": 2,
+      "uniques": 2
+    },
+    "2026-08-24": {
+      "count": 0,
+      "uniques": 0
+    },
+    "2026-08-25": {
+      "count": 4,
+      "uniques": 3
+    },
+    "2026-08-26": {
+      "count": 10,
+      "uniques": 6
+    },
+    "2026-08-27": {
+      "count": 3,
+      "uniques": 2
+    },
+    "2026-08-28": {
+      "count": 13,
+      "uniques": 3
+    },
+    "2026-08-29": {
+      "count": 6,
+      "uniques": 1
+    },
+    "2026-08-30": {
+      "count": 4,
+      "uniques": 3
+    },
+    "2026-08-31": {
+      "count": 1,
+      "uniques": 1
+    },
+    "2026-09-01": {
+      "count": 5,
+      "uniques": 4
+    }
+  },
+  "clones_count_14d": 77,
+  "clones_uniques_14d": 31,
+  "updated_at": "2026-09-02T20:23:29Z",
+  "views": {
+    "2026-08-19": {
+      "count": 40,
+      "uniques": 12
+    },
+    "2026-08-20": {
+      "count": 59,
+      "uniques": 14
+    },
+    "2026-08-21": {
+      "count": 40,
+      "uniques": 17
+    },
+    "2026-08-22": {
+      "count": 78,
+      "uniques": 22
+    },
+    "2026-08-23": {
+      "count": 43,
+      "uniques": 15
+    },
+    "2026-08-24": {
+      "count": 64,
+      "uniques": 27
+    },
+    "2026-08-25": {
+      "count": 50,
+      "uniques": 17
+    },
+    "2026-08-26": {
+      "count": 52,
+      "uniques": 17
+    },
+    "2026-08-27": {
+      "count": 31,
+      "uniques": 14
+    },
+    "2026-08-28": {
+      "count": 74,
+      "uniques": 17
+    },
+    "2026-08-29": {
+      "count": 25,
+      "uniques": 8
+    },
+    "2026-08-30": {
+      "count": 53,
+      "uniques": 16
+    },
+    "2026-08-31": {
+      "count": 44,
+      "uniques": 16
+    },
+    "2026-09-01": {
+      "count": 31,
+      "uniques": 14
+    }
+  },
+  "views_count_14d": 684,
+  "views_uniques_14d": 192
+}
