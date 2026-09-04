@@ -24,11 +24,17 @@ When you fork or adapt this work, keep attribution and ShareAlike terms.
    - `GIT_AUTHOR_NAME` / `GIT_AUTHOR_EMAIL` — commit identity for analytics refreshes (defaults to the user who triggered the workflow / `github.actor`).
 6. Optional cleanup after templating: delete contents of `data/` and `out/` (keep the folders) so your first run starts clean.
 7. Run **Actions → Update analytics → Run workflow**.
-8. Embed each SVG in the target README (replace `YOUR_USER` / `YOUR_ANALYTICS_REPO` / `RepoName`):
+8. Embed each SVG in the target README (replace `YOUR_USER` / `YOUR_ANALYTICS_REPO` / `RepoName`).
+   Wrap the image so **clicking the panel opens the SVG** (same URL for src and href):
 
 ```markdown
-![Repo analytics](https://raw.githubusercontent.com/YOUR_USER/YOUR_ANALYTICS_REPO/main/out/RepoName/analytics.svg)
+[![Repo analytics](https://raw.githubusercontent.com/YOUR_USER/YOUR_ANALYTICS_REPO/main/out/RepoName/analytics.svg)](https://raw.githubusercontent.com/YOUR_USER/YOUR_ANALYTICS_REPO/main/out/RepoName/analytics.svg)
 ```
+
+Each panel includes a footer CTA (“Make an analytics dashboard for your repo”) linking to this
+template (`REPO_ANALYTICS_URL`). That SVG-internal link works when the raw SVG is open;
+GitHub README `<img>` embeds do not activate SVG-internal links, so the README wrap
+above opens the SVG, and the CTA is usable from there.
 
 To change how often it runs, edit the `cron:` in
 [`.github/workflows/update-analytics.yml`](.github/workflows/update-analytics.yml)
@@ -39,9 +45,9 @@ To change how often it runs, edit the `cron:` in
 After the hourly workflow has run at least once:
 
 ```markdown
-![Repo analytics](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/FlightScnr/analytics.svg)
-![Repo analytics](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/FlightScnr_Pi/analytics.svg)
-![Repo analytics](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/halo/analytics.svg)
+[![Repo analytics](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/FlightScnr/analytics.svg)](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/FlightScnr/analytics.svg)
+[![Repo analytics](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/FlightScnr_Pi/analytics.svg)](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/FlightScnr_Pi/analytics.svg)
+[![Repo analytics](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/halo/analytics.svg)](https://raw.githubusercontent.com/yashmulgaonkar/repo-analytics/main/out/halo/analytics.svg)
 ```
 
 ## How it works

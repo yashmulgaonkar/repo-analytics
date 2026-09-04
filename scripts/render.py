@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -26,6 +27,13 @@ DATA_DIR = ROOT / "data"
 OUT_DIR = ROOT / "out"
 REPOS_FILE = ROOT / "repos.yaml"
 EXCLUDED_CONTRIBUTOR_LOGINS = frozenset({"cursoragent"})
+# Footer CTA target (forks may override). Links work when opening the raw SVG;
+# GitHub README <img> embeds do not activate SVG-internal links.
+REPO_ANALYTICS_URL = os.environ.get(
+    "REPO_ANALYTICS_URL",
+    "https://github.com/yashmulgaonkar/repo-analytics",
+).rstrip("/")
+CTA_LABEL = "Make an analytics dashboard for your repo"
 
 # Colors inspired by Repobeats-style panels
 C_BG = "#f6f8fa"
@@ -272,7 +280,8 @@ def render_repo(full: str) -> Path:
     chart_w = (WIDTH - 2 * PAD - 3 * gap) / 4
     contrib_y = charts_y + chart_h + gap
     contrib_h = 110
-    height = contrib_y + contrib_h + PAD
+    footer_h = 22
+    height = contrib_y + contrib_h + footer_h + PAD
 
     parts: list[str] = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
@@ -354,9 +363,15 @@ def render_repo(full: str) -> Path:
             parts.append(draw_heatmap(x, contrib_y + 70, row2, C_HEAT_GREEN, cell=8, gap=2))
             parts.append(svg_text(x, contrib_y + 96, f'{person.get("commits", 0)} commits', size=10, fill=C_MUTED))
 
+    footer_y = contrib_y + contrib_h + 16
+    parts.append(
+        f'<a href="{escape(REPO_ANALYTICS_URL)}" target="_blank" rel="noopener noreferrer">'
+        f"{svg_text(PAD, footer_y, CTA_LABEL, size=10, fill=C_BLUE)}"
+        f"</a>"
+    )
     updated = meta.get("updated_at") or ""
     if updated:
-        parts.append(svg_text(WIDTH - PAD, height - 8, f"Updated {updated}", size=9, fill=C_MUTED, anchor="end"))
+        parts.append(svg_text(WIDTH - PAD, footer_y, f"Updated {updated}", size=9, fill=C_MUTED, anchor="end"))
 
     parts.append("</svg>")
     out_dir = OUT_DIR / full.split("/")[-1]
