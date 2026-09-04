@@ -34,6 +34,8 @@ DATA_DIR = ROOT / "data"
 REPOS_FILE = ROOT / "repos.yaml"
 API = "https://api.github.com"
 USER_AGENT = "repo-analytics/1.0 (+https://github.com/yashmulgaonkar/repo-analytics)"
+# Never surface these as Top Contributors (automation / agent accounts).
+EXCLUDED_CONTRIBUTOR_LOGINS = frozenset({"cursoragent"})
 
 
 def utc_now() -> datetime:
@@ -196,6 +198,8 @@ def collect_contributions(gh: GitHub, owner: str, repo: str) -> dict[str, Any]:
             login = item["author"].get("login")
         if not login:
             login = (author_block.get("name") or "unknown").strip() or "unknown"
+        if login.lower() in EXCLUDED_CONTRIBUTOR_LOGINS:
+            continue
         author_totals[login] = int(author_totals.get(login, 0)) + 1
         author_days.setdefault(login, {})
         bump(author_days[login], day)

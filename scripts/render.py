@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 OUT_DIR = ROOT / "out"
 REPOS_FILE = ROOT / "repos.yaml"
+EXCLUDED_CONTRIBUTOR_LOGINS = frozenset({"cursoragent"})
 
 # Colors inspired by Repobeats-style panels
 C_BG = "#f6f8fa"
@@ -331,7 +332,11 @@ def render_repo(full: str) -> Path:
     # Top contributors
     parts.append(card(PAD, contrib_y, WIDTH - 2 * PAD, contrib_h))
     parts.append(svg_text(PAD + 14, contrib_y + 24, "♥  Top Contributors", size=13, fill=C_GREEN, weight="600"))
-    contributors = contrib.get("contributors") or []
+    contributors = [
+        person
+        for person in (contrib.get("contributors") or [])
+        if str(person.get("login") or "").lower() not in EXCLUDED_CONTRIBUTOR_LOGINS
+    ]
     if not contributors:
         parts.append(svg_text(PAD + 14, contrib_y + 56, "No commit authors yet", size=12, fill=C_MUTED))
     else:
