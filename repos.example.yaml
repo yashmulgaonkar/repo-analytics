@@ -1,0 +1,5 @@
+# Copy to repos.yaml (or edit repos.yaml directly) and list repositories
+# whose traffic you can read with TRAFFIC_TOKEN.
+# Traffic (clones/views) accumulates from the first successful sync onward.
+repos:
+  - YOUR_GITHUB_USERNAME/YOUR_REPO

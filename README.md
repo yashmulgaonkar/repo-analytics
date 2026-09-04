@@ -2,14 +2,39 @@
 
 Copyright (c) 2026 Yash Mulgaonkar <yashmulgaonkar@gmail.com>
 
-All-time GitHub repository analytics for **FlightScnr**, **FlightScnr_Pi**, and **halo**.
-Collects clones/views beyond GitHub’s 14-day traffic window and renders a
-Repobeats-style SVG panel for each README.
+All-time GitHub repository analytics: collect clones/views beyond GitHub’s
+14-day traffic window and render a Repobeats-style SVG panel for each README.
+
+This repository is a **template**. Use it for your own repos, or follow the
+live instance below for [FlightScnr](https://github.com/yashmulgaonkar/FlightScnr),
+[FlightScnr_Pi](https://github.com/yashmulgaonkar/FlightScnr_Pi), and
+[halo](https://github.com/yashmulgaonkar/halo).
 
 **License:** [CC BY-NC-SA 4.0](LICENSE) — see also [NOTICE](NOTICE).
 Commercial use is not permitted without separate written permission.
+When you fork or adapt this work, keep attribution and ShareAlike terms.
 
-## Embed
+## Use as a template
+
+1. Click **Use this template** (or fork) to create your own copy.
+2. Edit [`repos.yaml`](repos.yaml) (see [`repos.example.yaml`](repos.example.yaml)) with `owner/name` entries you can access.
+3. Create a **classic PAT** with the `repo` scope (required for the Traffic API).
+4. Add it as Actions secret `TRAFFIC_TOKEN` (Settings → Secrets and variables → Actions).
+5. Optional Actions **variables**:
+   - `GIT_AUTHOR_NAME` / `GIT_AUTHOR_EMAIL` — commit identity for analytics refreshes (defaults to the user who triggered the workflow / `github.actor`).
+6. Optional cleanup after templating: delete contents of `data/` and `out/` (keep the folders) so your first run starts clean.
+7. Run **Actions → Update analytics → Run workflow**.
+8. Embed each SVG in the target README (replace `YOUR_USER` / `YOUR_ANALYTICS_REPO` / `RepoName`):
+
+```markdown
+![Repo analytics](https://raw.githubusercontent.com/YOUR_USER/YOUR_ANALYTICS_REPO/main/out/RepoName/analytics.svg)
+```
+
+To change how often it runs, edit the `cron:` in
+[`.github/workflows/update-analytics.yml`](.github/workflows/update-analytics.yml)
+(GitHub Actions does not expand repository variables inside schedule triggers).
+
+## Live embeds (this instance)
 
 After the hourly workflow has run at least once:
 
@@ -21,18 +46,12 @@ After the hourly workflow has run at least once:
 
 ## How it works
 
-1. GitHub Actions runs hourly (`17 * * * *`).
+1. GitHub Actions runs on a schedule (default hourly at `17 * * * *`) or via workflow_dispatch.
 2. `scripts/collect.py` pulls traffic + issues/PRs/commits and upserts daily traffic into `data/`.
 3. `scripts/render.py` writes `out/<repo>/analytics.svg`.
 4. Changes are committed back to this repo.
 
 Clone/view **all-time** totals start from the first successful sync (plus whatever remains in GitHub’s current 14-day window). Issues, PRs, and commits are rebuilt from the API each run.
-
-## Setup
-
-1. Create a classic PAT with the `repo` scope (required for the Traffic API).
-2. Add it as repository secret `TRAFFIC_TOKEN`.
-3. Run **Actions → Update analytics → Run workflow**.
 
 ## Add another repo
 

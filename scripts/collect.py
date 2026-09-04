@@ -35,6 +35,7 @@ REPOS_FILE = ROOT / "repos.yaml"
 API = "https://api.github.com"
 USER_AGENT = "repo-analytics/1.0 (+https://github.com/yashmulgaonkar/repo-analytics)"
 # Never surface these as Top Contributors (automation / agent accounts).
+# Forks may extend this set for their own bots.
 EXCLUDED_CONTRIBUTOR_LOGINS = frozenset({"cursoragent"})
 
 
