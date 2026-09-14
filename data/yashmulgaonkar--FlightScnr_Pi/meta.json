@@ -1,6 +1,6 @@
 {
-  "clones_all_time": 2264,
-  "clones_uniques_all_time": 870,
+  "clones_all_time": 2280,
+  "clones_uniques_all_time": 886,
   "commits_all_time": 494,
   "created_at": "2026-06-09T06:09:15Z",
   "description": "Desktop flight and marine radar: a real-time aircraft and marine vessel tracker powered by a Raspberry Pi and 4\" round screen.",
@@ -10,8 +10,8 @@
   "issues_opened_all_time": 69,
   "open_issues_count": 9,
   "prs_opened_all_time": 141,
-  "stargazers_count": 530,
-  "updated_at": "2026-09-14T08:00:48Z",
-  "views_all_time": 20380,
-  "views_uniques_all_time": 7241
+  "stargazers_count": 532,
+  "updated_at": "2026-09-14T14:09:01Z",
+  "views_all_time": 20801,
+  "views_uniques_all_time": 7382
 }
