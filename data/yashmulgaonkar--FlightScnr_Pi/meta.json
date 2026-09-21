@@ -1,7 +1,7 @@
 {
   "clones_all_time": 2362,
   "clones_uniques_all_time": 958,
-  "commits_all_time": 494,
+  "commits_all_time": 496,
   "created_at": "2026-06-09T06:09:15Z",
   "description": "Desktop flight and marine radar: a real-time aircraft and marine vessel tracker powered by a Raspberry Pi and 4\" round screen.",
   "forks_count": 41,
@@ -9,9 +9,9 @@
   "html_url": "https://github.com/yashmulgaonkar/FlightScnr_Pi",
   "issues_opened_all_time": 71,
   "open_issues_count": 9,
-  "prs_opened_all_time": 142,
+  "prs_opened_all_time": 143,
   "stargazers_count": 564,
-  "updated_at": "2026-09-21T01:10:09Z",
+  "updated_at": "2026-09-21T06:25:40Z",
   "views_all_time": 23215,
   "views_uniques_all_time": 8405
 }
