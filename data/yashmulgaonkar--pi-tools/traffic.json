@@ -151,11 +151,15 @@
     "2026-10-08": {
       "count": 1,
       "uniques": 1
+    },
+    "2026-10-09": {
+      "count": 0,
+      "uniques": 0
     }
   },
-  "clones_count_14d": 16,
-  "clones_uniques_14d": 15,
-  "updated_at": "2026-10-10T01:46:39Z",
+  "clones_count_14d": 15,
+  "clones_uniques_14d": 14,
+  "updated_at": "2026-10-10T08:34:11Z",
   "views": {
     "2026-09-01": {
       "count": 0,
@@ -308,8 +312,12 @@
     "2026-10-08": {
       "count": 0,
       "uniques": 0
+    },
+    "2026-10-09": {
+      "count": 0,
+      "uniques": 0
     }
   },
-  "views_count_14d": 9,
-  "views_uniques_14d": 4
+  "views_count_14d": 6,
+  "views_uniques_14d": 3
 }
