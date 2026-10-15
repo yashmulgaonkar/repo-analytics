@@ -223,11 +223,15 @@
     "2026-10-13": {
       "count": 4,
       "uniques": 3
+    },
+    "2026-10-14": {
+      "count": 2,
+      "uniques": 2
     }
   },
   "clones_count_14d": 58,
   "clones_uniques_14d": 41,
-  "updated_at": "2026-10-15T01:31:03Z",
+  "updated_at": "2026-10-15T07:30:10Z",
   "views": {
     "2026-08-19": {
       "count": 142,
@@ -452,8 +456,12 @@
     "2026-10-13": {
       "count": 47,
       "uniques": 39
+    },
+    "2026-10-14": {
+      "count": 71,
+      "uniques": 46
     }
   },
   "views_count_14d": 819,
-  "views_uniques_14d": 486
+  "views_uniques_14d": 480
 }
