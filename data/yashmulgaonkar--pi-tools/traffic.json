@@ -247,11 +247,15 @@
     "2026-11-01": {
       "count": 0,
       "uniques": 0
+    },
+    "2026-11-02": {
+      "count": 1,
+      "uniques": 1
     }
   },
-  "clones_count_14d": 6,
-  "clones_uniques_14d": 6,
-  "updated_at": "2026-11-03T06:54:53Z",
+  "clones_count_14d": 5,
+  "clones_uniques_14d": 5,
+  "updated_at": "2026-11-03T15:14:50Z",
   "views": {
     "2026-09-01": {
       "count": 0,
@@ -498,6 +502,10 @@
       "uniques": 0
     },
     "2026-11-01": {
+      "count": 0,
+      "uniques": 0
+    },
+    "2026-11-02": {
       "count": 0,
       "uniques": 0
     }
