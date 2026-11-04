@@ -1,17 +1,17 @@
 {
-  "clones_all_time": 508,
-  "clones_uniques_all_time": 326,
-  "commits_all_time": 180,
+  "clones_all_time": 510,
+  "clones_uniques_all_time": 328,
+  "commits_all_time": 187,
   "created_at": "2026-06-06T02:21:16Z",
   "description": "Sweeping radar style ADS-B traffic display for the avgeek in you!",
   "forks_count": 32,
   "full_name": "yashmulgaonkar/FlightScnr",
   "html_url": "https://github.com/yashmulgaonkar/FlightScnr",
   "issues_opened_all_time": 46,
-  "open_issues_count": 6,
-  "prs_opened_all_time": 4,
+  "open_issues_count": 3,
+  "prs_opened_all_time": 5,
   "stargazers_count": 305,
-  "updated_at": "2026-11-04T01:26:23Z",
-  "views_all_time": 6334,
-  "views_uniques_all_time": 3892
+  "updated_at": "2026-11-04T09:22:55Z",
+  "views_all_time": 6425,
+  "views_uniques_all_time": 3942
 }
