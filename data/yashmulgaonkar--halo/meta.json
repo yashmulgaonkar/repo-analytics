@@ -1,7 +1,7 @@
 {
-  "clones_all_time": 678,
-  "clones_uniques_all_time": 373,
-  "commits_all_time": 276,
+  "clones_all_time": 695,
+  "clones_uniques_all_time": 383,
+  "commits_all_time": 278,
   "created_at": "2024-11-22T22:50:31Z",
   "description": "An open-source, ESP32-powered air quality monitor with an RGB ring, touchscreen, and comprehensive environmental sensors. Firmware installer: https://yashmulgaonkar.github.io/halo/",
   "forks_count": 53,
@@ -9,9 +9,9 @@
   "html_url": "https://github.com/yashmulgaonkar/halo",
   "issues_opened_all_time": 16,
   "open_issues_count": 2,
-  "prs_opened_all_time": 14,
+  "prs_opened_all_time": 16,
   "stargazers_count": 959,
-  "updated_at": "2026-11-10T02:12:09Z",
-  "views_all_time": 4094,
-  "views_uniques_all_time": 1529
+  "updated_at": "2026-11-10T09:56:48Z",
+  "views_all_time": 4159,
+  "views_uniques_all_time": 1546
 }
