@@ -53,13 +53,13 @@
       "uniques": 0
     },
     "2026-11-18": {
-      "count": 0,
-      "uniques": 0
+      "count": 2,
+      "uniques": 1
     }
   },
-  "clones_count_14d": 0,
-  "clones_uniques_14d": 0,
-  "updated_at": "2026-11-19T03:34:53Z",
+  "clones_count_14d": 2,
+  "clones_uniques_14d": 1,
+  "updated_at": "2026-11-19T13:19:48Z",
   "views": {
     "2026-11-05": {
       "count": 0,
